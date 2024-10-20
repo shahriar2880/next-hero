@@ -19,6 +19,10 @@ const Navbar = () => {
             title : "Contact",
             path : '/contacts'
         },
+        {
+            title : "Blogs",
+            path : '/blogs'
+        },
     ]
     const handlerLogin =() =>{
         router.push('/login')

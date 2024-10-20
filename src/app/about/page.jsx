@@ -1,9 +1,10 @@
+import AboutContents from '@/components/AboutContents'
 import React from 'react'
 
 const AboutPage = () => {
   return (
-    <div>
-      About Page
+    <div className='h-screen'>
+      <AboutContents/>
     </div>
   )
 }
