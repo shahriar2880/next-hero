@@ -14,7 +14,7 @@ const blogPost = [
     {
       slug: "how-to-make-a-website",
       title: "A Beginner's Guide to Creating a Website",
-      description: "Learn the basics of web development and build your own website from scratch.",
+      description: "Learn the basics of web development and build your website from scratch.",
     },
     {
       slug: "top-10-programming-languages",
