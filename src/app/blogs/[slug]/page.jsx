@@ -19,7 +19,7 @@ const blogPost = [
     {
       slug: "top-10-programming-languages",
       title: "The Most Popular Programming Languages of 2024",
-      description: "Discover the top 10 programming languages used by developers worldwide.",
+      description: "Discover top 10 programming languages used by developers worldwide.",
     },
     {
       slug: "best-practices-for-seo",
