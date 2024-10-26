@@ -12,7 +12,7 @@ const page = async ({params}) => {
   return (
     <div className='h-screen p-10 border-2'>
       <h1>Title: {title}</h1>
-      <h4>Description: {body}</h4>
+      <h4>Desc: {body}</h4>
     </div>
   )
 }
