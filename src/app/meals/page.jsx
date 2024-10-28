@@ -1,11 +1,12 @@
 import Meal from '@/components/Meal'
 import React from 'react'
+import styles from './style.module.css'
 
 const MealPage = () => {
   return (
     <div className='p-12'>
-      <h1 className='text-3xl font-semibold text-red-400'>choose Your Meals</h1>
-      <p>Choose Your Meal By Searching....</p>
+      <h1 className={styles.font_size}>Choose Your Meals</h1>
+      <p className={styles.font_tomato}>Choose Your Meal By Searching....</p>
       <Meal/>
     </div>
   )

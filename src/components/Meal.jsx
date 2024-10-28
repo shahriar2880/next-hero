@@ -9,7 +9,7 @@ const Meal = () => {
   const loadData = async () => {
     try {
       const res = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/search.php?f=${search}`
+        `www.themealdb.com/api/json/v1/1/search.php?f=${search}`
       );
       const data = await res.json();
       setMeal(data.meals);
@@ -19,8 +19,10 @@ const Meal = () => {
     }
   };
   const handler = (e) => {
+    console.log(e.target.value);
     setSearch(e.target.value);
   };
+
   useEffect(()=>{
     loadData();
   },[])
@@ -38,9 +40,10 @@ const Meal = () => {
           Search
         </button>
         <div className="mt-12 grid grid-cols-3 gap-12">
-          {meals?.length > 0 && !error && meals?.map((meal) => (
+          {meals?.length > 0 && !error &&
+            meals?.map((meal) => (
               <div key={meal?.idMeal} className="border-2 p-4">
-                <Image src={meal?.strMealThumb} alt={meal?.strMeal} />
+                <Image src={meal.strMealThumb} alt={meal.strMeal}/>
                 <h1>{meal.strMeal}</h1>
                 <h5>{meal.strInstructions}</h5>
               </div>
