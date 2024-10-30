@@ -7,6 +7,7 @@ const Meal = () => {
   const [recipes, setRecipes] = useState([]);
 
   const loadData = async () => {
+   
     try {
       const res = await fetch(`https://dummyjson.com/recipes/search?q=${search}`);
       const data = await res.json();
@@ -51,6 +52,7 @@ const Meal = () => {
                 {/* <h5>{recipe.strInstructions}</h5> */}
               </div>
             ))}
+            
             {
                 error && <h6>No Data Found</h6>
             }

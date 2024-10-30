@@ -32,6 +32,10 @@ const Navbar = () => {
       title: "Categories",
       path: "/categories",
     },
+    {
+      title: "Gallery",
+      path: "/gallery",
+    }
   ];
   const handlerLogin = () => {
     router.push("/login");
