@@ -2,6 +2,8 @@ import { Playfair_Display } from 'next/font/google'
 import Meal from '@/components/Meal'
 import React from 'react'
 import styles from './style.module.css'
+import { getMeals } from '@/recipes/mealsApi'
+// import { getMeals } from '@/services/postApi'
 
 const playfairDisplay = Playfair_Display({weight :['400','500','600','700','800','900'], subsets: ["latin"]})
 
@@ -13,8 +15,9 @@ export const metadata = {
   description: "Meals Page",
 };
 
-const MealPage = () => {
-  
+const MealPage = async () => {
+  // const mealsData = await getMeals();
+
   return (
     <div className={playfairDisplay.className}>
       <h1 className={styles.font_size}>Choose Your Meals</h1>
