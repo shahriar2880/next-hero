@@ -4,7 +4,7 @@ export async function GET(){
     })
 }
 
-export async function POSt(request){
+export async function POST(request){
     const newComment = await request.json()
     comments.push({
         id: comments.length +1,
