@@ -12,6 +12,14 @@ export async function PATCH(request, {params}){
         comments
     });
 }
+export async function DELETE(request, {params}){
+
+    const newComments = comments.filter((c)=> c.if !== parseInt(params.id))
+    return Response.json({
+        message: "Comment Deleted",
+        newComments
+    });
+}
 const comments = [
     {
         id: 1,

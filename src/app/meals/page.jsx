@@ -21,7 +21,7 @@ const MealPage = async () => {
   return (
     <div className={playfairDisplay.className}>
       <h1 className={styles.font_size}>Choose Your Meals</h1>
-      <p className={styles.font_tomato}>Choose Your Meal By Searching....</p>
+      <p className={styles.font_tomato}>Choose Your Meal By Searching...</p>
       <Meal/>
     </div>
   )
