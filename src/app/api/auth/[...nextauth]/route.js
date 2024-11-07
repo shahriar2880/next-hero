@@ -39,7 +39,7 @@ export const authOptions = {
             if(account){
                 token.type = user.type
             }
-            return token
+            return token;
           },
           async session({ session, token }) {
             session.user.type =token.type
@@ -62,7 +62,7 @@ const users = [
         name: "reza",
         email: "as@gmail.com",
         password: "password",
-        type: "admin"
+        type: "modarator"
     },
     {
         id: 3,

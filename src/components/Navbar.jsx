@@ -8,7 +8,7 @@ const Navbar = () => {
   const pathName = usePathname();
   const router = useRouter();
   const session = useSession();
-  console.log(session)
+  console.log(session);
   const links = [
     {
       title: "Posts",
@@ -26,7 +26,7 @@ const Navbar = () => {
       title: "Blogs",
       path: "/blogs",
     },
-    
+
     {
       title: "Categories",
       path: "/categories",
@@ -38,10 +38,10 @@ const Navbar = () => {
     {
       title: "About",
       path: "/abouts",
-    }
+    },
   ];
   const handlerLogin = () => {
-    router.push("/login");
+    router.push("/api/auth/signin");
   };
 
   if (pathName.includes("dashboard")) return <div>Dashboard Layout</div>;
@@ -62,9 +62,24 @@ const Navbar = () => {
           </Link>
         ))}
       </ul>
-      {session.status === "authenticated" ? <button onClick={handlerLogin} className="bg-white text-cyan-700 p-3">
-        LogIn
-      </button>: <button onClick={handlerLogin} className="bg-white text-cyan-700 p-3">Logout</button>}
+      {session.status === "authenticated" ? (
+        <button onClick={handlerLogin} className="bg-white text-cyan-700 p-3">
+          LogIn
+        </button>
+      )  : (
+        <button onClick={handlerLogin} className="bg-white text-cyan-700 p-3">
+          Logout
+        </button>
+      )}
+      {session.data ? (
+  <div>
+    <h6>
+      {session.data.user.name}
+      <br />
+      {session.data.user.type ? session.data.user.type : "N/A"}
+    </h6>
+  </div>
+) : null}
     </nav>
   );
 };
