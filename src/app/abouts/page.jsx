@@ -1,4 +1,6 @@
+import { getServerSession } from 'next-auth';
 import React from 'react'
+import { authOptions } from '../api/auth/[...nextauth]/route';
 
 const getTime = async() =>{
     const res = await fetch("http://localhost:3000/time",{next:{revalidate: 10}}); //{cache: 'no-store'}
@@ -7,6 +9,8 @@ const getTime = async() =>{
   }
 
 const page = async () => {
+  const session = await getServerSession(authOptions);
+  console.log(session);
   const currentTime = await getTime();
   return (
     <div>
