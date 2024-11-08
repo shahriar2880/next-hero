@@ -55,21 +55,24 @@ const users = [
         name: "shahriar",
         email: "asq@gmail.com",
         password: "password",
-        type: "admin"
+        type: "admin",
+        image: "https://picsum.photos/200"
     },
     {
         id: 2,
         name: "reza",
         email: "as@gmail.com",
         password: "password",
-        type: "modarator"
+        type: "modarator",
+        image: "https://picsum.photos/200"
     },
     {
         id: 3,
         name: "shakil",
         email: "sq@gmail.com",
         password: "password",
-        type: "admin"
+        type: "admin",
+        image: "https://picsum.photos/200"
     },
 ]
 

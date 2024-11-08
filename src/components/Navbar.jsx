@@ -1,5 +1,6 @@
 "use client";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
@@ -66,12 +67,12 @@ const Navbar = () => {
         <button onClick={handlerLogin} className="bg-white text-cyan-700 p-3">
           LogIn
         </button>
-      )  : (
+      ) : (
         <button onClick={handlerLogin} className="bg-white text-cyan-700 p-3">
           Logout
         </button>
       )}
-      {session.data ? (
+      {/* {session.data ? (
   <div>
     <h6>
       {session.data.user.name}
@@ -79,7 +80,15 @@ const Navbar = () => {
       {session.data.user.type ? session.data.user.type : "N/A"}
     </h6>
   </div>
-) : null}
+) : null} */}
+      <div>
+        <h6>
+          <Image src={session?.data?.user?.image} alt={session?.data?.user?.name} height={20} width={20}/>
+          {session?.data?.user?.name}
+          <br />
+          {session?.data?.user?.type}
+        </h6>
+      </div>
     </nav>
   );
 };
