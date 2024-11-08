@@ -1,5 +1,5 @@
 "use client";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -40,12 +40,16 @@ const Navbar = () => {
       title: "About",
       path: "/abouts",
     },
+    {
+      title: "Dashboard",
+      path: "/dashboard",
+    },
   ];
   const handlerLogin = () => {
     router.push("/api/auth/signin");
   };
 
-  if (pathName.includes("dashboard")) return <div>Dashboard Layout</div>;
+  // if (pathName.includes("dashboard")) return <div>Dashboard Layout</div>;
 
   return (
     <nav className="bg-red-500 px-6 py-4 flex justify-between items-center">
@@ -63,32 +67,39 @@ const Navbar = () => {
           </Link>
         ))}
       </ul>
-      {session.status === "authenticated" ? (
+      <div className="flex gap-1">
+        <div className="flex items-center space-x-3">
+        <div>
+          <Image
+            key={session?.data?.user?.id}
+            src={session?.data?.user?.image}
+            alt="profilepic"
+            height={20}
+            width={20}
+          />
+        </div>
+        <div>
+          <h6> {session?.data?.user?.name}</h6>
+        <h6>{session?.data?.user?.type}</h6>
+        </div>
+        
+      </div>
+      <div>
+      {session.status !== "authenticated" ? (
         <button onClick={handlerLogin} className="bg-white text-cyan-700 p-3">
           LogIn
         </button>
       ) : (
-        <button onClick={handlerLogin} className="bg-white text-cyan-700 p-3">
+        <button
+          onClick={() => signOut()}
+          className="bg-white text-cyan-700 p-3"
+        >
           Logout
         </button>
       )}
-      {/* {session.data ? (
-  <div>
-    <h6>
-      {session.data.user.name}
-      <br />
-      {session.data.user.type ? session.data.user.type : "N/A"}
-    </h6>
-  </div>
-) : null} */}
-      <div>
-        <h6>
-          <Image src={session?.data?.user?.image} alt={session?.data?.user?.name} height={20} width={20}/>
-          {session?.data?.user?.name}
-          <br />
-          {session?.data?.user?.type}
-        </h6>
       </div>
+      </div>
+      
     </nav>
   );
 };
