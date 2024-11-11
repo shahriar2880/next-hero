@@ -12,8 +12,12 @@ const connectDB = async () =>{
                 strict: true,
                 deprecationErrors: true,
             },
-        })
+        });
+        db = client.db('next-hero')
+        return db
     } catch (error) {
-        
+        console.log(error)
     }
 };
+
+export default connectDB;
