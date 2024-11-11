@@ -1,8 +1,9 @@
+'use client'
 import React from 'react'
 
 const page = () => {
     const handelRegister = async (event) => {
-
+        event.preventDefault();
     };
   return (
     <div className='flex items-center justify-center mt-24'>
@@ -12,6 +13,13 @@ const page = () => {
         </h6>
         <div>
             <form onSubmit={handelRegister} action=''>
+                <label htmlFor='email'> Name </label><br/>
+                <input
+                type='text'
+                name='name'
+                placeholder='your name'
+                className='outline-none border-transparent p-3 text-slate-700'
+                /> <br/><br/>
                 <label htmlFor='email'> Email </label><br/>
                 <input
                 type='text'
@@ -25,7 +33,7 @@ const page = () => {
                 name='password'
                 placeholder='your password'
                 className='outline-none border-transparent p-3 text-slate-700'
-                /> <br/>
+                /> <br/><br/>
                 <button className='bg-orange-500 p-3'>Register</button>
             </form>
         </div>

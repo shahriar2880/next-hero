@@ -85,6 +85,11 @@ const Navbar = () => {
         
       </div>
       <div>
+        <Link href={'api/auth/signup'}>
+        <button onClick={handlerLogin} className="mr-3 bg-white text-cyan-700 p-3">
+          Sign Up
+        </button>
+        </Link>
       {session.status !== "authenticated" ? (
         <button onClick={handlerLogin} className="bg-white text-cyan-700 p-3">
           LogIn
