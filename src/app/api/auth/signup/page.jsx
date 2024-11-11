@@ -6,11 +6,11 @@ const page = () => {
         event.preventDefault();
     };
   return (
-    <div className='flex items-center justify-center mt-24'>
+    <div className='flex items-center justify-center min-h-screen top-0'>
       <div>
-        <h6 className='text-lg font-semibold'>
+        <h3 className='text-lg font-semibold'>
             Sign Up With Email And Password
-        </h6>
+        </h3>
         <div>
             <form onSubmit={handelRegister} action=''>
                 <label htmlFor='email'> Name </label><br/>
