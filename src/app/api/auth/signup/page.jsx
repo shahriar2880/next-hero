@@ -7,6 +7,8 @@ const page = () => {
     const newUser = {
       name: event.target.name.value,
       email: event.target.email.value,
+      image: event.target.image.value,
+      type: event.target.type.value,
       password: event.target.password.value,
     };
     const resp = await fetch(
@@ -19,6 +21,7 @@ const page = () => {
         },
       }
     );
+    event.target.reset()
     console.log(resp)
   };
 
@@ -47,7 +50,30 @@ const page = () => {
               name="email"
               placeholder="your email"
               className="outline-none border-transparent p-3 text-slate-700"
-            />{" "}
+            />
+            <br />
+            <br />
+            <label htmlFor="email"> Image </label>
+            <br />
+            <input
+              type="text"
+              name="image"
+              placeholder="your image"
+              className="outline-none border-transparent p-3 text-slate-700"
+            />
+            <br />
+            <br />
+            <label htmlFor="email"> Type </label>
+            <br />
+            <select
+              name="type"
+              placeholder="user type"
+              className="outline-none border-transparent p-3 text-slate-700"
+            >
+              <option value="admin">Admin</option>
+              <option value="modaretor">Modaretor</option>
+              <option value="member">Member</option>
+            </select>
             <br />
             <br />
             <label htmlFor="password"> Password </label>
