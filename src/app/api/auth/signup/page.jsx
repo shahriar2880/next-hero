@@ -58,7 +58,7 @@ const page = () => {
             <input
               type="text"
               name="image"
-              placeholder="your image"
+              placeholder="Input your image url"
               className="outline-none border-transparent p-3 text-slate-700"
             />
             <br />
