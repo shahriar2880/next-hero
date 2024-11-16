@@ -67,7 +67,7 @@ const page = () => {
             <br />
             <select
               name="type"
-              placeholder="user type"
+              placeholder="input user type"
               className="outline-none border-transparent p-3 text-slate-700"
             >
               <option value="admin">Admin</option>
