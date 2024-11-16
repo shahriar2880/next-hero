@@ -1,4 +1,5 @@
 // export const dynamic = 'force-static'; // Ensure static rendering
+import connectDB from "@/lib/connectDB";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
@@ -21,7 +22,10 @@ export const authOptions = {
                     return null
                 }
                 if(email){
-                    const currentUser = users.find((user) => user.email === email)
+                    // const currentUser = users.find((user) => user.email === email)
+                    const db = await connectDB();
+                    const currentUser = await db.collection('users').findOne({email})
+                    console.log(currentUser)
                     if(currentUser){
                         if(currentUser.password === password){
                             return currentUser
